@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS clock</title>
+	<style>
+		body {
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		.container {
+			width: 500px;
+			height: 500px;
+			/*background-color: gainsboro;*/
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.hand {
+			width: 600px;
+			height: 2px;
+			background-color: red;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="hand">
+		</div>
+	</div>
+<script>
+  const hand = document.querySelector(".hand");
+
+  function tick() {
+    const seconds = new Date().getSeconds(); // 0–59
+    hand.style.transform = `rotate(${seconds * 6}deg)`;
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>
+</script>
+</body>
+</html>
